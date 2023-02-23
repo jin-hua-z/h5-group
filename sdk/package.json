@@ -1,19 +1,29 @@
 {
   "name": "sdk",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts":{
+  "description": "",
+  "main": "dingding-h5-api.js",
+  "scripts": {
     "dev": "webpack-dev-server -c build/webpack.dev.js",
     "build": "webpack -c build/webpack.prod.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.21.0",
-    "@babel/preset-typescript": "^7.21.0",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "core-js": "^3.28.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "dingtalk-jsapi": "^3.0.12"
   }
 }
