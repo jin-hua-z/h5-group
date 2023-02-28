@@ -1,4 +1,5 @@
 import * as dd from "dingtalk-jsapi"; // 此方式为整体加载，也可按需进行加载
+import { IBizTelephoneShowCallMenuParams } from "dingtalk-jsapi/api/biz/telephone/showCallMenu";
 enum BaseEnum {
   ISDING = "ISDING",
   ISWECHAT = "ISWECHAT",
@@ -86,9 +87,36 @@ export class Base {
     }
   }
 
-  showCallMenu(config: any) {
+  showCallMenu(config: IBizTelephoneShowCallMenuParams) {
     const configMap: Record<BaseEnum, any> = {
       [BaseEnum.ISDING]: dd.biz.telephone.showCallMenu,
+      [BaseEnum.ISWECHAT]: Base.emptyHandle,
+      [BaseEnum.EXTRA]: Base.emptyHandle,
+    };
+    try {
+      configMap[this.env](config);
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
+  /** 提示 */
+  scan(config: any) {
+    console.log("dd.biz.util.scan", dd.biz.util.scan);
+
+    const configMap: Record<BaseEnum, any> = {
+      [BaseEnum.ISDING]: dd.biz.util.scan,
+      [BaseEnum.ISWECHAT]: Base.emptyHandle,
+      [BaseEnum.EXTRA]: Base.emptyHandle,
+    };
+    try {
+      configMap[this.env](config);
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
+  datepicker(config: any) {
+    const configMap: Record<BaseEnum, any> = {
+      [BaseEnum.ISDING]: dd.biz.util.datepicker,
       [BaseEnum.ISWECHAT]: Base.emptyHandle,
       [BaseEnum.EXTRA]: Base.emptyHandle,
     };

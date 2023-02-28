@@ -1,3 +1,4 @@
+import { IBizTelephoneShowCallMenuParams } from "dingtalk-jsapi/api/biz/telephone/showCallMenu";
 declare enum BaseEnum {
     ISDING = "ISDING",
     ISWECHAT = "ISWECHAT",
@@ -21,7 +22,10 @@ export declare class Base {
     toast(toastConfig: any): void;
     /** 提示 */
     notification(config: any): void;
-    showCallMenu(config: any): void;
+    showCallMenu(config: IBizTelephoneShowCallMenuParams): void;
+    /** 提示 */
+    scan(config: any): void;
+    datepicker(config: any): void;
 }
 export {};
 //# sourceMappingURL=sdk.d.ts.map
