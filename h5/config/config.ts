@@ -2,8 +2,8 @@ export default {
   headScripts: [
     `https://g.alicdn.com/code/npm/@ali/dingtalk-h5-remote-debug-sdk/0.1.3/app.bundle.js">`,
     `h5RemoteDebugSdk.init({
-      uuid: "96340cab-c928-4096-8377-93bbb3140e67",
+      uuid: "7a659003-efad-4897-9242-fa7197d7c817",
       observerElement: document.documentElement,
-    })`,
+    });`,
   ],
 };

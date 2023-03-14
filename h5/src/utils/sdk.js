@@ -37,7 +37,8 @@ class Base {
         this.env = Base.currentEnv(window.navigator.userAgent);
         if (this.env === BaseEnum.EXTRA) {
             console.warn("请在合法的环境运行");
-            return Object.create(null);
+            alert("当前环境浏览器");
+            // return Object.create(null);
         }
     }
     static currentEnv(ua) {

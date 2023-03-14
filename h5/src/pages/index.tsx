@@ -1,14 +1,14 @@
 import React from "react";
-import { Base } from "../utils/index.js";
+import { Base } from "../../../sdk/src/index";
 import * as dd from "dingtalk-jsapi"; // 此方式为整体加载，也可按需进行加载
 
-export default function HomePage() {
-  const base = new Base({ config: {} });
-  console.log("base", base, window.navigator);
 
+export default function HomePage() {
+  const base = new Base({ config: { appkey: 'dingwvlcv9mozf0x8t8q', appsecret: 'DbnAUZuc1U6uwV2r9HzNq4FrD5A2l8QNhSUpgFOy9wMReZIm8BcxPhmgdUgOpwSe' } });
   return (
     <div>
       <h1>测试调用钉钉API</h1>
+      <input type="file" />
       <h2>
         <a
           onClick={() => {
@@ -20,7 +20,7 @@ export default function HomePage() {
                 //onSuccess将在点击button之后回调
                 /*回调*/
               },
-              onFail: function (err) {},
+              onFail: function (err) { },
             });
           }}
         >
@@ -38,7 +38,7 @@ export default function HomePage() {
                 //onSuccess将在点击button之后回调
                 /*回调*/
               },
-              onFail: function (err) {},
+              onFail: function (err) { },
             });
           }}
         >
@@ -55,7 +55,7 @@ export default function HomePage() {
                 {}
                 */
               },
-              onFail: function (err) {},
+              onFail: function (err) { },
             });
           }}
         >
@@ -70,9 +70,9 @@ export default function HomePage() {
                 phoneNumber: "10000", // 期望拨打的电话号码
                 code: "+86", // 国家代号，中国是+86
                 showDingCall: false, // 是否显示钉钉电话
-                onSuccess: function () {},
-                onFail: function () {
-                  alert("demo");
+                onSuccess: function () { },
+                onFail: function (err) {
+                  alert(JSON.stringify(err));
                 },
               });
             } catch (error) {
@@ -84,7 +84,7 @@ export default function HomePage() {
                   //onSuccess将在点击button之后回调
                   /*回调*/
                 },
-                onFail: function (err) {},
+                onFail: function (err) { },
               });
             }
           }}
@@ -104,7 +104,7 @@ export default function HomePage() {
                   { 'text': String}
                 */
               },
-              onFail: function (err) {},
+              onFail: function (err) { },
             });
           }}
         >
@@ -123,11 +123,29 @@ export default function HomePage() {
         }
         */
             },
-            onFail: function (err) {},
+            onFail: function (err) { },
           });
         }}
       >
         datepicker
+      </h2>
+
+      <h2
+        onClick={() => {
+          base.chooseImage({
+            count: 1, // 最多可以选择几张图片，默认9
+            sourceType: ["camera", "album"], // 可以指定来源是相册还是相机，默认二者都有
+            onSuccess: function (result) {
+              //onSuccess将在选择图片成功之后回调
+              alert(JSON.stringify(result));
+            },
+            onFail: function (err) {
+              alert(JSON.stringify(err));
+            },
+          });
+        }}
+      >
+        chooseImage
       </h2>
     </div>
   );
