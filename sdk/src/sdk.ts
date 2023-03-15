@@ -1,7 +1,9 @@
 import * as dd from "dingtalk-jsapi"; // 此方式为整体加载，也可按需进行加载
 import { IBizTelephoneShowCallMenuParams } from "dingtalk-jsapi/api/biz/telephone/showCallMenu";
 import { getConfigData } from "./api/weichat";
+import { initCloud } from "@wxcloud/cloud-sdk";
 
+const cloud = initCloud();
 enum BaseEnum {
   ISDING = "ISDING",
   ISWECHAT = "ISWECHAT",
@@ -14,16 +16,16 @@ export class Base {
   constructor({ config }: { config: any }) {
     this.config = config;
     this.env = Base.currentEnv(window.navigator.userAgent);
+    // const cloud = initCloud();
+    // console.log("cloud", cloud);
     if (this.env === BaseEnum.EXTRA) {
       console.warn("请在合法的环境运行");
-      alert("当前环境浏览器");
+      console.log("当前环境浏览器");
       // return Object.create(null);
     } else if (this.env === BaseEnum.ISDING) {
       getConfigData(config).then((res) => {
         const { agentId, timeStamp, nonceStr, signature } = res;
         const corpId = "ding3f64ce811c17eb1ba1320dcb25e91351";
-        // console.log({ res });
-        alert(JSON.stringify(window.location));
         dd.config({
           agentId, // 必填，微应用ID
           corpId, //必填，企业ID
@@ -40,10 +42,9 @@ export class Base {
             "biz.ding.post",
             "biz.util.openLink",
             "biz.util.chooseImage",
-            "biz.telephone.showCallMenu"
+            "biz.telephone.showCallMenu",
           ], // 必填，需要使用的jsapi列表，注意：不要带dd。
         });
-
         dd.error(function (err) {
           alert("dd error: " + JSON.stringify(err));
         }); //该方法必须带上，用来捕获鉴权出现的异常信息，否则不方便排查出现的问题
@@ -70,7 +71,7 @@ export class Base {
     const alertMap: Record<BaseEnum, any> = {
       [BaseEnum.ISDING]: dd.device.notification.alert,
       [BaseEnum.ISWECHAT]: Base.emptyHandle,
-      [BaseEnum.w]: Base.emptyHandle,
+      [BaseEnum.EXTRA]: Base.emptyHandle,
     };
     try {
       alertMap[this.env](alertConfig);
@@ -162,6 +163,8 @@ export class Base {
 
   // 选择图片
   chooseImage(config: any) {
+    console.log(dd.biz.util);
+
     const configMap: Record<BaseEnum, any> = {
       // [BaseEnum.ISDING]: dd.biz.util.uploadImage,
       [BaseEnum.ISDING]: dd.biz.util.chooseImage,
@@ -173,5 +176,9 @@ export class Base {
     } catch (error) {
       console.log("error", error);
     }
+  }
+
+  checkJsApi(){
+    
   }
 }

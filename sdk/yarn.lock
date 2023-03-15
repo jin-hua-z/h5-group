@@ -1337,6 +1337,11 @@
   resolved "https://registry.npmmirror.com/@webpack-cli/serve/-/serve-2.0.1.tgz"
   integrity sha512-0G7tNyS+yW8TdgHwZKlDWYXFA6OJQnoLCQvYKkQP0Q2X205PSQ6RNUj0M+1OB/9gRQaUZ/ccYfaxd0nhaWKfjw==
 
+"@wxcloud/cloud-sdk@^1.0.4":
+  version "1.0.4"
+  resolved "https://npm.olymtech.com/nexus/repository/idx-npm/@wxcloud/cloud-sdk/-/cloud-sdk-1.0.4.tgz#69e5e6a0a6a89320ce38be42242248fba6987998"
+  integrity sha512-NV9exfXFOHFGf05lJrGzeFj4B4nEf13Zll3wMwpMgN5Z14ZmNeCg6Gr1nIOpuky7D0lxygwaUne12s7JGaN8AQ==
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmmirror.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz"

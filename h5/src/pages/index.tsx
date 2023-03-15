@@ -2,11 +2,18 @@ import React from "react";
 import { Base } from "../../../sdk/src/index";
 import * as dd from "dingtalk-jsapi"; // 此方式为整体加载，也可按需进行加载
 
+const appid = 'wxdd11d710ffc37d2f';
+const redirect_uri = 'https%3A%2F%2F4u627q5300.goho.co%2F';
+const response_type = 'code';
+const scope = 'snsapi_base';
+const state = '123';
 
 export default function HomePage() {
   const base = new Base({ config: { appkey: 'dingwvlcv9mozf0x8t8q', appsecret: 'DbnAUZuc1U6uwV2r9HzNq4FrD5A2l8QNhSUpgFOy9wMReZIm8BcxPhmgdUgOpwSe' } });
   return (
     <div>
+      <h1>测试微信API</h1>
+      <a href={`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${redirect_uri}&response_type=${response_type}&scope=${scope}&state=${state}#wechat_redirect`}>授权</a>
       <h1>测试调用钉钉API</h1>
       <input type="file" />
       <h2>
@@ -140,7 +147,7 @@ export default function HomePage() {
               alert(JSON.stringify(result));
             },
             onFail: function (err) {
-              alert(JSON.stringify(err));
+              console.log(JSON.stringify(err),'onFail');
             },
           });
         }}

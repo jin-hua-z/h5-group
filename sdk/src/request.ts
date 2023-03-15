@@ -1,3 +1,4 @@
+// const prefix = "http://192.168.0.250:3001";
 const prefix = "http://192.168.0.250:3001";
 
 function bindUrl(path: string, pathParams: any) {
