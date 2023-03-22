@@ -16,7 +16,8 @@ const agentId = 2432506129;
 
 export default function HomePage() {
   const [imgUrl, setImgUrl] = useState('');
-  const base = new Base({ config: { appkey: 'dingwvlcv9mozf0x8t8q', appsecret: 'DbnAUZuc1U6uwV2r9HzNq4FrD5A2l8QNhSUpgFOy9wMReZIm8BcxPhmgdUgOpwSe' } });
+  // appkey,appsecret 应用凭证
+  const base = new Base({ config: { appkey: 'dingwvlcv9mozf0x8t8q', appsecret: 'DbnAUZuc1U6uwV2r9HzNq4FrD5A2l8QNhSUpgFOy9wMReZIm8BcxPhmgdUgOpwSe', url: window.location.href } });
   return (
     <div>
       <h1>测试微信API</h1>
@@ -692,7 +693,7 @@ export default function HomePage() {
           // PC端调用时，调用此接口跳转到外部浏览器打开目标页面。
           // 手机端调用时，调用此接口由钉钉客户端内置浏览器打开目标页面
           dd.biz.util.openLink({
-            url: "http://192.168.0.250:8000/?dd_nav_bgcolor=FF5E97F6",//要打开链接的地址
+            url: "https://4u627q5300.goho.co/?dd_nav_bgcolor=FF5E97F6",//要打开链接的地址
             onSuccess: function (result) {
               alert(JSON.stringify(result) + '---onSuccess');
             },

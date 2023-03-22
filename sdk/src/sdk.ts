@@ -44,6 +44,7 @@ export class Base {
   /** 共同的API */
   /** sdk授权 */
   sdkAuthorize() {
+    getConfigData(this.config);
     const authorizeMap: Record<BaseEnum, any> = {
       [BaseEnum.ISDING]: () => {
         getConfigData(this.config).then((res) => {
