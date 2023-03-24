@@ -22,6 +22,18 @@ export default function HomePage() {
     <div>
       <h1>测试微信API</h1>
       <a href={`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${redirect_uri}&response_type=${response_type}&scope=${scope}&state=${state}#wechat_redirect`}>授权</a>
+      <h1>钉钉小程序通过postMessage通信</h1>
+      <a onClick={() => {
+        window.native_notify('alert', {
+          title: "h5通过postMessage桥接打开的",
+          content: "h5通过postMessage桥接打开的",
+          buttonText: "我知道了",
+        });
+      }}>alert</a>
+
+      <a onClick={() => {
+        window.native_notify('alert');
+      }}>alert</a>
       <h1>测试调用钉钉API</h1>
       <h2 onClick={() => {
         base.sdkAuthorize();
@@ -495,7 +507,9 @@ export default function HomePage() {
           console.log(res, 'res');
           setImgUrl(res)
         }} /></a>
-        <span onClick={() => { setImgUrl('') }}>演示展示上传的图片，点击清空:</span><img src={imgUrl} />
+        <span onClick={() => { setImgUrl('') }}>演示展示上传的图片，点击清空:</span>
+        <img src={imgUrl}  />
+        <a href={imgUrl} download="test.jpg">下载</a>
         <br></br>
       </>
 
@@ -618,23 +632,25 @@ export default function HomePage() {
               const { mediaId, duration } = res;
               // res.mediaId; // 返回音频的MediaID，可用于本地播放和音频下载
               // res.duration; // 返回音频的时长，单位：秒
-
-              // 播放音频
-              dd.device.audio.play({
-                localAudioId: mediaId,
-                onSuccess: function (result) {
-                  alert(JSON.stringify(result) + '---onSuccess');
-                },
-                onFail: function (err) {
-                  alert(JSON.stringify(err) + '---err');
-                }
-              });
+              alert(JSON.stringify({ mediaId, duration }) + '---onSuccess');
 
               // 下载音频
               dd.device.audio.download({
                 mediaId,
                 onSuccess: function (res) {
-                  res.localAudioId;
+                  // res.localAudioId;
+                  alert(JSON.stringify(res) + '---onSuccessDownload');
+                  // 播放音频
+                  dd.device.audio.play({
+                    localAudioId: res.localAudioId,
+                    onSuccess: function (result) {
+                      alert(JSON.stringify(result) + '---play');
+                    },
+                    onFail: function (err) {
+                      alert(JSON.stringify(err) + '---err');
+                    }
+                  });
+
                 },
                 onFail: function (err) {
                 }
