@@ -4,11 +4,6 @@ import { history } from 'umi';
 import * as dd from "dingtalk-jsapi"; // 此方式为整体加载，也可按需进行加载
 import axios from 'axios';
 
-const appid = 'wxdd11d710ffc37d2f';
-const redirect_uri = 'https%3A%2F%2F4u627q5300.goho.co%2F';
-const response_type = 'code';
-const scope = 'snsapi_base';
-const state = '123';
 
 const corpId = "ding3f64ce811c17eb1ba1320dcb25e91351";
 const agentId = 2432506129;
@@ -21,7 +16,10 @@ export default function HomePage() {
   return (
     <div>
       <h1>测试微信API</h1>
-      <a href={`https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appid}&redirect_uri=${redirect_uri}&response_type=${response_type}&scope=${scope}&state=${state}#wechat_redirect`}>授权</a>
+      <a onClick={() => {
+        base.sdkAuthorize();
+      }}>微信授权</a>
+
       <h1>钉钉小程序通过postMessage通信</h1>
       <a onClick={() => {
         window.native_notify('alert', {
@@ -508,7 +506,7 @@ export default function HomePage() {
           setImgUrl(res)
         }} /></a>
         <span onClick={() => { setImgUrl('') }}>演示展示上传的图片，点击清空:</span>
-        <img src={imgUrl}  />
+        <img src={imgUrl} />
         <a href={imgUrl} download="test.jpg">下载</a>
         <br></br>
       </>

@@ -1,6 +1,8 @@
 import * as dd from "dingtalk-jsapi"; // 此方式为整体加载，也可按需进行加载
 import { IBizTelephoneShowCallMenuParams } from "dingtalk-jsapi/api/biz/telephone/showCallMenu";
-import { getConfigData } from "./api/dd";
+import { getConfigDataDD } from "./api/dd";
+import { getConfigDataWeChat } from "./api/weChat";
+
 import { initCloud } from "@wxcloud/cloud-sdk";
 
 const cloud = initCloud();
@@ -9,13 +11,18 @@ enum BaseEnum {
   ISWECHAT = "ISWECHAT",
   EXTRA = "EXTRA",
 }
-
+function isWechat() {
+  return /MicroMessenger/i.test(window.navigator.userAgent);
+}
 export class Base {
   config: any;
   env: BaseEnum;
   constructor({ config }: { config: any }) {
     this.config = config;
     this.env = Base.currentEnv(window.navigator.userAgent);
+    if (isWechat()) this.env = BaseEnum.ISWECHAT;
+
+    alert(JSON.stringify(window.navigator));
     // const cloud = initCloud();
     // console.log("cloud", cloud);
     if (this.env === BaseEnum.EXTRA) {
@@ -44,10 +51,9 @@ export class Base {
   /** 共同的API */
   /** sdk授权 */
   sdkAuthorize() {
-    getConfigData(this.config);
     const authorizeMap: Record<BaseEnum, any> = {
       [BaseEnum.ISDING]: () => {
-        getConfigData(this.config).then((res) => {
+        getConfigDataDD(this.config).then((res) => {
           const { agentId, timeStamp, nonceStr, signature } = res;
           const corpId = "ding3f64ce811c17eb1ba1320dcb25e91351";
           dd.config({
@@ -94,7 +100,11 @@ export class Base {
           }); //该方法必须带上，用来捕获鉴权出现的异常信息，否则不方便排查出现的问题
         });
       },
-      [BaseEnum.ISWECHAT]: Base.emptyHandle,
+      [BaseEnum.ISWECHAT]: () => {
+        getConfigDataWeChat(this.config).then((res) => {
+          alert(JSON.stringify(res));
+        });
+      },
       [BaseEnum.EXTRA]: Base.emptyHandle,
     };
     try {
