@@ -28,10 +28,39 @@ export default function HomePage() {
           buttonText: "我知道了",
         });
       }}>alert</a>
+      <br></br>
 
       <a onClick={() => {
-        window.native_notify('alert');
-      }}>alert</a>
+        window.native_notify('scan', {
+          type: 'qr',
+          success: (res) => {
+            alert(JSON.stringify(res));
+          },
+        });
+      }}>扫码</a>
+      <br></br>
+
+      <a onClick={() => {
+        window.native_notify('complexChoose', {
+          title: "测试标题",            //标题
+          multiple: true,            //是否多选
+          limitTips: "超出了",          //超过限定人数返回提示
+          maxUsers: 1000,            //最大可选人数
+          pickedUsers: [],            //已选用户，值为userId列表
+          pickedDepartments: [],          //已选的部门id
+          disabledUsers: [],            //不可选用户，值为userId列表
+          disabledDepartments: [],        //不可选部门id
+          requiredUsers: [],            //必选用户（不可取消选中状态）
+          requiredDepartments: [],        //必选部门（不可取消选中状态）
+          permissionType: "xxx",          //可添加权限校验，选人权限，目前只有GLOBAL这个参数
+          responseUserOnly: false,        //返回人，或者返回人和部门
+          success: (res) => {
+            alert(JSON.stringify(res));
+          },
+        });
+      }}>选人与部门</a>
+      <br></br>
+
       <h1>测试调用钉钉API</h1>
       <h2 onClick={() => {
         base.sdkAuthorize();
