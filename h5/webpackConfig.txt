@@ -1,0 +1,1055 @@
+{
+  mode: 'development',
+  stats: 'none',
+  devtool: 'cheap-module-source-map',
+  target: [
+    'web',
+    'es5'
+  ],
+  experiments: {
+    topLevelAwait: true,
+    outputModule: false
+  },
+  cache: {
+    type: 'filesystem',
+    version: '4.0.52',
+    buildDependencies: {
+      config: [
+        '/Users/admin/Desktop/dzg/git/h5-group/h5/package.json',
+        '/Users/admin/Desktop/dzg/git/h5-group/h5/config/config.ts'
+      ]
+    },
+    cacheDirectory: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/.cache/bundler-webpack-eager'
+  },
+  infrastructureLogging: {
+    level: 'error'
+  },
+  output: {
+    path: '/Users/admin/Desktop/dzg/git/h5-group/h5/dist',
+    filename: '[name].js',
+    chunkFilename: '[name].async.js',
+    publicPath: '/',
+    pathinfo: true,
+    assetModuleFilename: 'static/[name].[hash:8][ext]',
+    hashFunction: 'xxhash64'
+  },
+  resolve: {
+    symlinks: true,
+    alias: {
+      umi: '@@/exports',
+      react: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/react',
+      'react-dom': '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/react-dom',
+      'react-router': '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/react-router',
+      'react-router-dom': '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/react-router-dom',
+      '@': '/Users/admin/Desktop/dzg/git/h5-group/h5/src',
+      '@@': '/Users/admin/Desktop/dzg/git/h5-group/h5/src/.umi',
+      'regenerator-runtime': '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/regenerator-runtime'
+    },
+    extensions: [
+      '.ts',
+      '.tsx',
+      '.js',
+      '.jsx',
+      '.mjs',
+      '.cjs',
+      '.json',
+      '.wasm'
+    ],
+    modules: [
+      'node_modules'
+    ],
+    fallback: {
+      assert: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/assert/assert.js',
+      buffer: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/buffer/index.js',
+      child_process: false,
+      cluster: false,
+      console: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/console-browserify/index.js',
+      constants: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/constants-browserify/constants.json',
+      crypto: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/crypto-browserify/index.js',
+      dgram: false,
+      dns: false,
+      domain: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/domain-browser/source/index.js',
+      events: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/events/events.js',
+      fs: false,
+      http: false,
+      https: false,
+      module: false,
+      net: false,
+      os: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/os-browserify/browser.js',
+      path: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/path-browserify/index.js',
+      punycode: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/node-libs-browser/node_modules/punycode/punycode.js',
+      process: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/process/browser.js',
+      querystring: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/querystring-es3/index.js',
+      readline: false,
+      repl: false,
+      stream: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/stream-browserify/index.js',
+      _stream_duplex: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/readable-stream/duplex.js',
+      _stream_passthrough: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/readable-stream/passthrough.js',
+      _stream_readable: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/readable-stream/readable.js',
+      _stream_transform: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/readable-stream/transform.js',
+      _stream_writable: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/readable-stream/writable.js',
+      string_decoder: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/string_decoder/lib/string_decoder.js',
+      sys: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/util/util.js',
+      timers: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/timers-browserify/main.js',
+      tls: false,
+      tty: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/tty-browserify/index.js',
+      url: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/url/url.js',
+      util: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/util/util.js',
+      vm: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/vm-browserify/index.js',
+      zlib: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/browserify-zlib/lib/index.js'
+    }
+  },
+  module: {
+    rules: [
+      /* config.module.rule('src') */
+      {
+        test: /\.(js|mjs|cjs)$/,
+        include: [
+          [
+            '/Users/admin/Desktop/dzg/git/h5-group/h5'
+          ]
+        ],
+        exclude: [
+          /node_modules/
+        ],
+        use: [
+          /* config.module.rule('src').use('babel-loader') */
+          {
+            loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/babel-loader/index.js',
+            options: {
+              sourceType: 'unambiguous',
+              babelrc: false,
+              configFile: false,
+              cacheDirectory: false,
+              browserslistConfigFile: false,
+              targets: {
+                chrome: 80
+              },
+              customize: undefined,
+              presets: [
+                [
+                  '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/babel-preset-umi/dist/index.js',
+                  {
+                    presetEnv: {},
+                    presetReact: {
+                      runtime: 'automatic'
+                    },
+                    presetTypeScript: {},
+                    pluginTransformRuntime: {},
+                    pluginLockCoreJS: {},
+                    pluginDynamicImportNode: false,
+                    pluginAutoCSSModules: true
+                  }
+                ],
+                {
+                  plugins: [
+                    [
+                      function () { /* omitted long function */ },
+                      {
+                        cwd: '/Users/admin/Desktop/dzg/git/h5-group/h5',
+                        absTmpPath: '/Users/admin/Desktop/dzg/git/h5-group/h5/src/.umi',
+                        onCheckCode: function () { /* omitted long function */ }
+                      }
+                    ]
+                  ]
+                }
+              ],
+              plugins: [
+                '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/react-refresh/babel.js',
+                [
+                  function () { /* omitted long function */ },
+                  {
+                    resolveImportSource: function () { /* omitted long function */ },
+                    exportAllMembers: undefined,
+                    unMatchLibs: undefined,
+                    remoteName: 'mf',
+                    alias: {},
+                    externals: []
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        resolve: {
+          fullySpecified: false
+        }
+      },
+      /* config.module.rule('jsx-ts-tsx') */
+      {
+        test: /\.(jsx|ts|tsx)$/,
+        use: [
+          /* config.module.rule('jsx-ts-tsx').use('babel-loader') */
+          {
+            loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/babel-loader/index.js',
+            options: {
+              sourceType: 'unambiguous',
+              babelrc: false,
+              configFile: false,
+              cacheDirectory: false,
+              browserslistConfigFile: false,
+              targets: {
+                chrome: 80
+              },
+              customize: undefined,
+              presets: [
+                [
+                  '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/babel-preset-umi/dist/index.js',
+                  {
+                    presetEnv: {},
+                    presetReact: {
+                      runtime: 'automatic'
+                    },
+                    presetTypeScript: {},
+                    pluginTransformRuntime: {},
+                    pluginLockCoreJS: {},
+                    pluginDynamicImportNode: false,
+                    pluginAutoCSSModules: true
+                  }
+                ],
+                {
+                  plugins: [
+                    [
+                      function () { /* omitted long function */ },
+                      {
+                        cwd: '/Users/admin/Desktop/dzg/git/h5-group/h5',
+                        absTmpPath: '/Users/admin/Desktop/dzg/git/h5-group/h5/src/.umi',
+                        onCheckCode: function () { /* omitted long function */ }
+                      }
+                    ]
+                  ]
+                }
+              ],
+              plugins: [
+                '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/react-refresh/babel.js',
+                [
+                  function () { /* omitted long function */ },
+                  {
+                    resolveImportSource: function () { /* omitted long function */ },
+                    exportAllMembers: undefined,
+                    unMatchLibs: undefined,
+                    remoteName: 'mf',
+                    alias: {},
+                    externals: []
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        resolve: {
+          fullySpecified: false
+        }
+      },
+      /* config.module.rule('extra-src') */
+      {
+        test: /\.(js|mjs|cjs)$/,
+        include: [
+          [
+            function () { /* omitted long function */ }
+          ]
+        ],
+        use: [
+          /* config.module.rule('extra-src').use('babel-loader') */
+          {
+            loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/babel-loader/index.js',
+            options: {
+              sourceType: 'unambiguous',
+              babelrc: false,
+              configFile: false,
+              cacheDirectory: false,
+              browserslistConfigFile: false,
+              targets: {
+                chrome: 80
+              },
+              customize: undefined,
+              presets: [
+                [
+                  '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/babel-preset-umi/dist/index.js',
+                  {
+                    presetEnv: {},
+                    presetReact: {
+                      runtime: 'automatic'
+                    },
+                    presetTypeScript: {},
+                    pluginTransformRuntime: {},
+                    pluginLockCoreJS: {},
+                    pluginDynamicImportNode: false,
+                    pluginAutoCSSModules: true
+                  }
+                ],
+                {
+                  plugins: [
+                    [
+                      function () { /* omitted long function */ },
+                      {
+                        cwd: '/Users/admin/Desktop/dzg/git/h5-group/h5',
+                        absTmpPath: '/Users/admin/Desktop/dzg/git/h5-group/h5/src/.umi',
+                        onCheckCode: function () { /* omitted long function */ }
+                      }
+                    ]
+                  ]
+                }
+              ],
+              plugins: [
+                '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/react-refresh/babel.js',
+                [
+                  function () { /* omitted long function */ },
+                  {
+                    resolveImportSource: function () { /* omitted long function */ },
+                    exportAllMembers: undefined,
+                    unMatchLibs: undefined,
+                    remoteName: 'mf',
+                    alias: {},
+                    externals: []
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        resolve: {
+          fullySpecified: false
+        }
+      },
+      /* config.module.rule('dep') */
+      {
+        test: /\.(js|mjs|cjs)$/,
+        include: [
+          /node_modules/
+        ],
+        exclude: [
+          function () { /* omitted long function */ }
+        ],
+        resolve: {
+          fullySpecified: false
+        }
+      },
+      /* config.module.rule('css') */
+      {
+        test: /\.css(\?.*)?$/,
+        oneOf: [
+          /* config.module.rule('css').oneOf('css-modules') */
+          {
+            resourceQuery: /modules/,
+            use: [
+              /* config.module.rule('css').oneOf('css-modules').use('mini-css-extract-plugin') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/mini-css-extract-plugin/loader.js',
+                options: {
+                  publicPath: './',
+                  emit: true,
+                  esModule: true
+                }
+              },
+              /* config.module.rule('css').oneOf('css-modules').use('css-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/css-loader/dist/cjs.js',
+                options: {
+                  importLoaders: 1,
+                  esModule: true,
+                  url: {
+                    filter: function () { /* omitted long function */ }
+                  },
+                  'import': true,
+                  modules: {
+                    localIdentName: '[local]___[hash:base64:5]',
+                    getLocalIdent: undefined
+                  }
+                }
+              },
+              /* config.module.rule('css').oneOf('css-modules').use('postcss-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/postcss-loader/index.js',
+                options: {
+                  postcssOptions: {
+                    ident: 'postcss',
+                    plugins: [
+                      function () { /* omitted long function */ },
+                      {
+                        postcssPlugin: 'postcss-preset-env',
+                        plugins: [
+                          {
+                            postcssPlugin: 'postcss-media-minmax',
+                            AtRule: {
+                              media: (atRule) => {
+                                transform(atRule);
+                              },
+                              'custom-media': (atRule) => {
+                                transform(atRule);
+                              }
+                            }
+                          },
+                          {
+                            postcssPlugin: 'postcss-page-break',
+                            Declaration: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-font-variant',
+                            Once(root) {
+                              root.walkRules(walkRule)
+                            }
+                          },
+                          {
+                            postcssPlugin: 'autoprefixer',
+                            prepare: function () { /* omitted long function */ },
+                            info: function () { /* omitted long function */ },
+                            options: {
+                              overrideBrowserslist: [
+                                'chrome >= 80'
+                              ],
+                              flexbox: 'no-2009'
+                            },
+                            browsers: [
+                              'chrome >= 80'
+                            ]
+                          },
+                          {
+                            postcssPlugin: 'postcss-progressive-custom-properties',
+                            RuleExit: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-preset-env',
+                            OnceExit: function () { /* omitted long function */ }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          /* config.module.rule('css').oneOf('css') */
+          {
+            sideEffects: true,
+            use: [
+              /* config.module.rule('css').oneOf('css').use('mini-css-extract-plugin') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/mini-css-extract-plugin/loader.js',
+                options: {
+                  publicPath: './',
+                  emit: true,
+                  esModule: true
+                }
+              },
+              /* config.module.rule('css').oneOf('css').use('css-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/css-loader/dist/cjs.js',
+                options: {
+                  importLoaders: 1,
+                  esModule: true,
+                  url: {
+                    filter: function () { /* omitted long function */ }
+                  },
+                  'import': true
+                }
+              },
+              /* config.module.rule('css').oneOf('css').use('postcss-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/postcss-loader/index.js',
+                options: {
+                  postcssOptions: {
+                    ident: 'postcss',
+                    plugins: [
+                      function () { /* omitted long function */ },
+                      {
+                        postcssPlugin: 'postcss-preset-env',
+                        plugins: [
+                          {
+                            postcssPlugin: 'postcss-media-minmax',
+                            AtRule: {
+                              media: (atRule) => {
+                                transform(atRule);
+                              },
+                              'custom-media': (atRule) => {
+                                transform(atRule);
+                              }
+                            }
+                          },
+                          {
+                            postcssPlugin: 'postcss-page-break',
+                            Declaration: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-font-variant',
+                            Once(root) {
+                              root.walkRules(walkRule)
+                            }
+                          },
+                          {
+                            postcssPlugin: 'autoprefixer',
+                            prepare: function () { /* omitted long function */ },
+                            info: function () { /* omitted long function */ },
+                            options: {
+                              overrideBrowserslist: [
+                                'chrome >= 80'
+                              ],
+                              flexbox: 'no-2009'
+                            },
+                            browsers: [
+                              'chrome >= 80'
+                            ]
+                          },
+                          {
+                            postcssPlugin: 'postcss-progressive-custom-properties',
+                            RuleExit: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-preset-env',
+                            OnceExit: function () { /* omitted long function */ }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      /* config.module.rule('less') */
+      {
+        test: /\.less(\?.*)?$/,
+        oneOf: [
+          /* config.module.rule('less').oneOf('css-modules') */
+          {
+            resourceQuery: /modules/,
+            use: [
+              /* config.module.rule('less').oneOf('css-modules').use('mini-css-extract-plugin') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/mini-css-extract-plugin/loader.js',
+                options: {
+                  publicPath: './',
+                  emit: true,
+                  esModule: true
+                }
+              },
+              /* config.module.rule('less').oneOf('css-modules').use('css-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/css-loader/dist/cjs.js',
+                options: {
+                  importLoaders: 1,
+                  esModule: true,
+                  url: {
+                    filter: function () { /* omitted long function */ }
+                  },
+                  'import': true,
+                  modules: {
+                    localIdentName: '[local]___[hash:base64:5]',
+                    getLocalIdent: undefined
+                  }
+                }
+              },
+              /* config.module.rule('less').oneOf('css-modules').use('postcss-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/postcss-loader/index.js',
+                options: {
+                  postcssOptions: {
+                    ident: 'postcss',
+                    plugins: [
+                      function () { /* omitted long function */ },
+                      {
+                        postcssPlugin: 'postcss-preset-env',
+                        plugins: [
+                          {
+                            postcssPlugin: 'postcss-media-minmax',
+                            AtRule: {
+                              media: (atRule) => {
+                                transform(atRule);
+                              },
+                              'custom-media': (atRule) => {
+                                transform(atRule);
+                              }
+                            }
+                          },
+                          {
+                            postcssPlugin: 'postcss-page-break',
+                            Declaration: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-font-variant',
+                            Once(root) {
+                              root.walkRules(walkRule)
+                            }
+                          },
+                          {
+                            postcssPlugin: 'autoprefixer',
+                            prepare: function () { /* omitted long function */ },
+                            info: function () { /* omitted long function */ },
+                            options: {
+                              overrideBrowserslist: [
+                                'chrome >= 80'
+                              ],
+                              flexbox: 'no-2009'
+                            },
+                            browsers: [
+                              'chrome >= 80'
+                            ]
+                          },
+                          {
+                            postcssPlugin: 'postcss-progressive-custom-properties',
+                            RuleExit: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-preset-env',
+                            OnceExit: function () { /* omitted long function */ }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              /* config.module.rule('less').oneOf('css-modules').use('/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/less-loader/index.js') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/less-loader/index.js',
+                options: {
+                  implementation: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-utils/compiled/less/index.js',
+                  lessOptions: {
+                    modifyVars: undefined,
+                    javascriptEnabled: true
+                  }
+                }
+              }
+            ]
+          },
+          /* config.module.rule('less').oneOf('css') */
+          {
+            sideEffects: true,
+            use: [
+              /* config.module.rule('less').oneOf('css').use('mini-css-extract-plugin') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/mini-css-extract-plugin/loader.js',
+                options: {
+                  publicPath: './',
+                  emit: true,
+                  esModule: true
+                }
+              },
+              /* config.module.rule('less').oneOf('css').use('css-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/css-loader/dist/cjs.js',
+                options: {
+                  importLoaders: 1,
+                  esModule: true,
+                  url: {
+                    filter: function () { /* omitted long function */ }
+                  },
+                  'import': true
+                }
+              },
+              /* config.module.rule('less').oneOf('css').use('postcss-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/postcss-loader/index.js',
+                options: {
+                  postcssOptions: {
+                    ident: 'postcss',
+                    plugins: [
+                      function () { /* omitted long function */ },
+                      {
+                        postcssPlugin: 'postcss-preset-env',
+                        plugins: [
+                          {
+                            postcssPlugin: 'postcss-media-minmax',
+                            AtRule: {
+                              media: (atRule) => {
+                                transform(atRule);
+                              },
+                              'custom-media': (atRule) => {
+                                transform(atRule);
+                              }
+                            }
+                          },
+                          {
+                            postcssPlugin: 'postcss-page-break',
+                            Declaration: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-font-variant',
+                            Once(root) {
+                              root.walkRules(walkRule)
+                            }
+                          },
+                          {
+                            postcssPlugin: 'autoprefixer',
+                            prepare: function () { /* omitted long function */ },
+                            info: function () { /* omitted long function */ },
+                            options: {
+                              overrideBrowserslist: [
+                                'chrome >= 80'
+                              ],
+                              flexbox: 'no-2009'
+                            },
+                            browsers: [
+                              'chrome >= 80'
+                            ]
+                          },
+                          {
+                            postcssPlugin: 'postcss-progressive-custom-properties',
+                            RuleExit: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-preset-env',
+                            OnceExit: function () { /* omitted long function */ }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              /* config.module.rule('less').oneOf('css').use('/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/less-loader/index.js') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/less-loader/index.js',
+                options: {
+                  implementation: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-utils/compiled/less/index.js',
+                  lessOptions: {
+                    modifyVars: undefined,
+                    javascriptEnabled: true
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      /* config.module.rule('sass') */
+      {
+        test: /\.(sass|scss)(\?.*)?$/,
+        oneOf: [
+          /* config.module.rule('sass').oneOf('css-modules') */
+          {
+            resourceQuery: /modules/,
+            use: [
+              /* config.module.rule('sass').oneOf('css-modules').use('mini-css-extract-plugin') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/mini-css-extract-plugin/loader.js',
+                options: {
+                  publicPath: './',
+                  emit: true,
+                  esModule: true
+                }
+              },
+              /* config.module.rule('sass').oneOf('css-modules').use('css-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/css-loader/dist/cjs.js',
+                options: {
+                  importLoaders: 1,
+                  esModule: true,
+                  url: {
+                    filter: function () { /* omitted long function */ }
+                  },
+                  'import': true,
+                  modules: {
+                    localIdentName: '[local]___[hash:base64:5]',
+                    getLocalIdent: undefined
+                  }
+                }
+              },
+              /* config.module.rule('sass').oneOf('css-modules').use('postcss-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/postcss-loader/index.js',
+                options: {
+                  postcssOptions: {
+                    ident: 'postcss',
+                    plugins: [
+                      function () { /* omitted long function */ },
+                      {
+                        postcssPlugin: 'postcss-preset-env',
+                        plugins: [
+                          {
+                            postcssPlugin: 'postcss-media-minmax',
+                            AtRule: {
+                              media: (atRule) => {
+                                transform(atRule);
+                              },
+                              'custom-media': (atRule) => {
+                                transform(atRule);
+                              }
+                            }
+                          },
+                          {
+                            postcssPlugin: 'postcss-page-break',
+                            Declaration: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-font-variant',
+                            Once(root) {
+                              root.walkRules(walkRule)
+                            }
+                          },
+                          {
+                            postcssPlugin: 'autoprefixer',
+                            prepare: function () { /* omitted long function */ },
+                            info: function () { /* omitted long function */ },
+                            options: {
+                              overrideBrowserslist: [
+                                'chrome >= 80'
+                              ],
+                              flexbox: 'no-2009'
+                            },
+                            browsers: [
+                              'chrome >= 80'
+                            ]
+                          },
+                          {
+                            postcssPlugin: 'postcss-progressive-custom-properties',
+                            RuleExit: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-preset-env',
+                            OnceExit: function () { /* omitted long function */ }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              /* config.module.rule('sass').oneOf('css-modules').use('/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/sass-loader/index.js') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/sass-loader/index.js'
+              }
+            ]
+          },
+          /* config.module.rule('sass').oneOf('css') */
+          {
+            sideEffects: true,
+            use: [
+              /* config.module.rule('sass').oneOf('css').use('mini-css-extract-plugin') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/mini-css-extract-plugin/loader.js',
+                options: {
+                  publicPath: './',
+                  emit: true,
+                  esModule: true
+                }
+              },
+              /* config.module.rule('sass').oneOf('css').use('css-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/css-loader/dist/cjs.js',
+                options: {
+                  importLoaders: 1,
+                  esModule: true,
+                  url: {
+                    filter: function () { /* omitted long function */ }
+                  },
+                  'import': true
+                }
+              },
+              /* config.module.rule('sass').oneOf('css').use('postcss-loader') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/postcss-loader/index.js',
+                options: {
+                  postcssOptions: {
+                    ident: 'postcss',
+                    plugins: [
+                      function () { /* omitted long function */ },
+                      {
+                        postcssPlugin: 'postcss-preset-env',
+                        plugins: [
+                          {
+                            postcssPlugin: 'postcss-media-minmax',
+                            AtRule: {
+                              media: (atRule) => {
+                                transform(atRule);
+                              },
+                              'custom-media': (atRule) => {
+                                transform(atRule);
+                              }
+                            }
+                          },
+                          {
+                            postcssPlugin: 'postcss-page-break',
+                            Declaration: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-font-variant',
+                            Once(root) {
+                              root.walkRules(walkRule)
+                            }
+                          },
+                          {
+                            postcssPlugin: 'autoprefixer',
+                            prepare: function () { /* omitted long function */ },
+                            info: function () { /* omitted long function */ },
+                            options: {
+                              overrideBrowserslist: [
+                                'chrome >= 80'
+                              ],
+                              flexbox: 'no-2009'
+                            },
+                            browsers: [
+                              'chrome >= 80'
+                            ]
+                          },
+                          {
+                            postcssPlugin: 'postcss-progressive-custom-properties',
+                            RuleExit: function () { /* omitted long function */ }
+                          },
+                          {
+                            postcssPlugin: 'postcss-preset-env',
+                            OnceExit: function () { /* omitted long function */ }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              },
+              /* config.module.rule('sass').oneOf('css').use('/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/sass-loader/index.js') */
+              {
+                loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/sass-loader/index.js'
+              }
+            ]
+          }
+        ]
+      },
+      /* config.module.rule('asset') */
+      {
+        oneOf: [
+          /* config.module.rule('asset').oneOf('avif') */
+          {
+            test: /\.avif$/,
+            type: 'asset',
+            mimetype: 'image/avif',
+            parser: {
+              dataUrlCondition: {
+                maxSize: 10000
+              }
+            }
+          },
+          /* config.module.rule('asset').oneOf('image') */
+          {
+            test: /\.(bmp|gif|jpg|jpeg|png)$/,
+            type: 'asset',
+            parser: {
+              dataUrlCondition: {
+                maxSize: 10000
+              }
+            }
+          },
+          /* config.module.rule('asset').oneOf('fallback') */
+          {
+            type: 'asset/resource',
+            exclude: [
+              /^$/,
+              /\.(js|mjs|cjs|jsx|ts|tsx)$/,
+              /\.(css|less|sass|scss|stylus)$/,
+              /\.html$/,
+              /\.json$/
+            ]
+          }
+        ]
+      },
+      /* config.module.rule('svgr') */
+      {
+        test: /\.svg$/,
+        issuer: /\.[jt]sx?$/,
+        type: 'javascript/auto',
+        use: [
+          /* config.module.rule('svgr').use('svgr-loader') */
+          {
+            loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/dist/loader/svgr.js',
+            options: {
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: 'preset-default',
+                    params: {
+                      overrides: {
+                        removeTitle: false
+                      }
+                    }
+                  },
+                  'prefixIds'
+                ]
+              },
+              svgo: true
+            }
+          },
+          /* config.module.rule('svgr').use('url-loader') */
+          {
+            loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/url-loader/index.js'
+          }
+        ]
+      },
+      /* config.module.rule('svg') */
+      {
+        test: /\.svg$/,
+        use: [
+          /* config.module.rule('svg').use('svgo-loader') */
+          {
+            loader: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/compiled/svgo-loader/index.js',
+            options: {
+              configFile: false
+            }
+          }
+        ]
+      }
+    ]
+  },
+  optimization: {
+    minimize: false
+  },
+  plugins: [
+    /* config.plugin('node-polyfill-provider') */
+    new ProvidePlugin(
+      {
+        Buffer: [
+          'buffer',
+          'Buffer'
+        ],
+        process: '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/process/browser.js'
+      }
+    ),
+    /* config.plugin('mini-css-extract-plugin') */
+    new MiniCssExtractPlugin(
+      {
+        filename: '[name].css',
+        chunkFilename: '[name].chunk.css',
+        ignoreOrder: true
+      }
+    ),
+    /* config.plugin('ignore-moment-locale') */
+    new IgnorePlugin(
+      {
+        resourceRegExp: /^\.\/locale$/,
+        contextRegExp: /moment$/
+      }
+    ),
+    /* config.plugin('define') */
+    new DefinePlugin(
+      {
+        'process.env': {
+          NODE_ENV: '"development"',
+          PUBLIC_PATH: '"/"'
+        }
+      }
+    ),
+    /* config.plugin('progress-plugin-dev') */
+    new UmiProgressPlugin(),
+    /* config.plugin('hmr') */
+    new HotModuleReplacementPlugin(),
+    /* config.plugin('fastRefresh') */
+    new ReactRefreshPlugin(
+      {
+        overlay: false,
+        exclude: /node_modules/i,
+        include: /\.([cm]js|[jt]sx?|flow)$/i
+      }
+    ),
+    /* config.plugin('harmony-linking-error-plugin') */
+    new HarmonyLinkingErrorPlugin(),
+    /* config.plugin('case-sensitive-paths') */
+    new CaseSensitivePathsPlugin()
+  ],
+  entry: {
+    umi: [
+      '/Users/admin/Desktop/dzg/git/h5-group/h5/node_modules/@umijs/bundler-webpack/client/client/client.js',
+      '/Users/admin/Desktop/dzg/git/h5-group/h5/src/.umi/umi.ts'
+    ]
+  }
+}

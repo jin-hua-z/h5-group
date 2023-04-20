@@ -10,4 +10,5 @@ export default {
     "https://appx/web-view.min.js",
   ],
   routes,
+  // MFSU: false,
 };
